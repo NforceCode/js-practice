@@ -72,6 +72,54 @@ const stud1 = new Student(
 // 3.4 Вывести индексы нулевых элементов (элемент равен нулю)
 // 3.5 Подсчитать количество нулевых элементов
 
+const getRandomNumber = () => Math.round(Math.random() * 100);
+
+const arrayFiller = (value) => {
+  const newArray = [];
+  for (let i = 0; i < value; i++) {
+    newArray.push(getRandomNumber());
+  }
+  return newArray;
+};
+
+const testArray = arrayFiller(25);
+testArray.fill(0, 24);
+
+console.log('Even index');
+for (let i = 0; i < testArray.length; i++) {
+  if (i % 2 === 0) {
+    console.log(testArray[i]);
+  }
+}
+console.log('Even index');
+
+console.log('even numbers');
+testArray.forEach((item) => {
+  if (item % 2 === 0) {
+    console.log(item);
+  }
+});
+console.log('even numbers');
+
+console.log('--------');
+let counter = 0;
+
+console.log('Index 0');
+for (let i = 0; i < testArray.length; i++) {
+  if (testArray[i] === 0) {
+    console.log(i);
+  }
+}
+console.log('Index 0');
+
+testArray.forEach((item) => {
+  if (item === 0) {
+    counter++;
+  }
+});
+
+console.log(`zero counter = ${counter}`);
+
 // 4 Создать классы:
 // - Книга (автор, название, год издания, издательство)
 // - Электронная версия книги (автор, название, год издания, издательство, формат, электронный номер)
