@@ -124,6 +124,23 @@ console.log(`zero counter = ${counter}`);
 // - Книга (автор, название, год издания, издательство)
 // - Электронная версия книги (автор, название, год издания, издательство, формат, электронный номер)
 
+class Book {
+  constructor(author, name, yearOfPublish, Publisher) {
+    this.author = author;
+    this.name = name;
+    this.yearOfPublish = yearOfPublish;
+    this.Publisher = Publisher;
+  }
+}
+
+class EBook extends Book {
+  constructor(author, name, yearOfPublish, Publisher, format, Enumber) {
+    super(author, name, yearOfPublish, Publisher);
+    this.format = format;
+    this.Enumber = Enumber;
+  }
+}
+
 // 5 Требуется написать функцию, выводящую в консоль числа от 1 до n, где n — это целое число, которая функция принимает в качестве параметра, с такими условиями:
 // вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
 // вывод fizz вместо чисел, кратных 3;
