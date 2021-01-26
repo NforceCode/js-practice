@@ -133,8 +133,14 @@ class EBook extends Book {
 // вывод buzz вместо чисел, кратных 5;
 
 function fizzBuzzPrinter(number) {
+  if(isNaN(number)) {
+    throw new TypeError('Input must be integer number');
+  }
+  if(!Number.isInteger(number)) {
+    throw new TypeError('Number must be integer');
+  }
   if (number < 1) {
-    throw new RangeError();
+    throw new RangeError('Number must be positive');
   }
   for (let i = 0; i < number; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
