@@ -17,6 +17,54 @@ function sumUntil (number) {
 // 2.3 Связать объекты между собой. т.е. прописать данные об факультете и кафедре для студента
 // 2.4 Реализовать функцию выводит на экран всю информацию о студенте
 
+class Student {
+  constructor(name, surname, isMale, contacts, univercity) {
+    this.name = name;
+    this.surname = surname;
+    this.isMale = isMale;
+    this.contacts = contacts;
+    this.univercity = univercity;
+  }
+
+  getAllInfo() {
+    return `Name: ${this.name}\nSurname: ${this.surname}\nGender: ${
+      this.isMale ? 'Male' : 'Female'
+    }\nContact info: ${this.contacts.getContactData()}\nStudent data: ${this.univercity.getUniData()}`;
+  }
+}
+
+class UniData {
+  constructor(faculty, kafedra) {
+    this.faculty = faculty;
+    this.kafedra = kafedra;
+  }
+
+  getUniData() {
+    return `\n\tFaculty: ${this.faculty}\n\tKafedra: ${this.kafedra}`;
+  }
+}
+
+class Contacts {
+  constructor(phone, email, address) {
+    this.phone = phone;
+    this.email = email;
+    this.address = address;
+  }
+
+  getContactData() {
+    return `\n\tPhone number: ${this.phone}\n\tEmail: ${this.email}\n\tAddress: ${this.address}`;
+  }
+}
+
+const zntu = new UniData('FRET', 'ZI');
+const stud1 = new Student(
+  'Kir',
+  'Rozum',
+  true,
+  new Contacts(3800123454, 'test@tesmail.test', 'Tester street 01'),
+  zntu
+);
+
 // 3.1 Создать числовой массив и проинициализировать его из 25 элементов.
 // 3.1*Инициализация с помощью случайных чисел
 // 3.2 Вывести элементы с четными индексами
