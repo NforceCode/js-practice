@@ -145,3 +145,23 @@ class EBook extends Book {
 // вывод fizzbuzz вместо чисел, кратных как 3, так и 5.
 // вывод fizz вместо чисел, кратных 3;
 // вывод buzz вместо чисел, кратных 5;
+
+function fizzBuzzPrinter(number) {
+  if (number < 1) {
+    throw new RangeError();
+  }
+  for (let i = 0; i < number; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzbuzz');
+      continue;
+    } else if (i % 3 === 0) {
+      console.log('fizz');
+      continue;
+    } else if (i % 5 === 0) {
+      console.log('buzz');
+      continue;
+    } else {
+      console.log(i);
+    }
+  }
+}
