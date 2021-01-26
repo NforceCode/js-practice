@@ -74,21 +74,14 @@ const stud1 = new Student(
 
 const getRandomNumber = () => Math.round(Math.random() * 100);
 
-const arrayFiller = (value) => {
-  const newArray = [];
-  for (let i = 0; i < value; i++) {
-    newArray.push(getRandomNumber());
-  }
-  return newArray;
-};
+const testArray = new Array(25).fill().map(() => getRandomNumber());
 
-const testArray = arrayFiller(25);
 testArray.fill(0, 24);
 
 console.log('Even index');
-for (let i = 0; i < testArray.length; i++) {
-  if (i % 2 === 0) {
-    console.log(testArray[i]);
+for(const [key, value] of testArray.entries()) {
+  if(key% 2 === 0) {
+    console.log(value);
   }
 }
 console.log('Even index');
@@ -101,23 +94,16 @@ testArray.forEach((item) => {
 });
 console.log('even numbers');
 
-console.log('--------');
-let counter = 0;
-
 console.log('Index 0');
-for (let i = 0; i < testArray.length; i++) {
-  if (testArray[i] === 0) {
-    console.log(i);
+
+let counter = 0;
+for (const [key, value] of testArray.entries()) {
+  if(value === 0) {
+    console.log(key);
+    counter++;
   }
 }
 console.log('Index 0');
-
-testArray.forEach((item) => {
-  if (item === 0) {
-    counter++;
-  }
-});
-
 console.log(`zero counter = ${counter}`);
 
 // 4 Создать классы:
