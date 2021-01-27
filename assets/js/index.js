@@ -48,10 +48,8 @@ class Student {
     return this._contacts;
   }
 
-  getAllInfo() {
-    return `Name: ${this.name}\nSurname: ${this.surname}\nGender: ${
-      this.isMale ? 'Male' : 'Female'
-    }\nContact info: ${this.contacts.getContactData()}\nStudent data: ${this.univercity.getUniData()}`;
+  getInfo() {
+    return `Name: ${this.name}\nSurname: ${this.surname}\nGender: ${this.isMale ? 'Male' : 'Female'}\nContact info: ${this.contacts.getContactData()}\nStudent data: ${this.univercity.getUniData()}`;
   }
 }
 
@@ -133,19 +131,19 @@ console.log(`zero values counter = ${counter}`);
 // - Электронная версия книги (автор, название, год издания, издательство, формат, электронный номер)
 
 class Book {
-  constructor(author, name, yearOfPublish, Publisher) {
+  constructor(author, name, yearOfPublish, publisher) {
     this.author = author;
     this.name = name;
     this.yearOfPublish = yearOfPublish;
-    this.Publisher = Publisher;
+    this.publisher = publisher;
   }
 }
 
 class EBook extends Book {
-  constructor(author, name, yearOfPublish, Publisher, format, Enumber) {
-    super(author, name, yearOfPublish, Publisher);
+  constructor(author, name, yearOfPublish, publisher, format, eNumber) {
+    super(author, name, yearOfPublish, publisher);
     this.format = format;
-    this.Enumber = Enumber;
+    this.eNumber = eNumber;
   }
 }
 
