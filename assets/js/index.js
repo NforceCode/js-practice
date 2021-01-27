@@ -26,6 +26,28 @@ class Student {
     this.univercity = univercity;
   }
 
+  set univercity (value) {
+    if(!(value instanceof UniData)) {
+      throw new TypeError('Univercity data must be made with UniData class');
+    }
+    this._univercity = value;
+  }
+
+  get univercity () {
+    return this._univercity;
+  }
+
+  set contacts (value) {
+    if(!(value instanceof Contacts)) {
+      throw new TypeError('Contacts data must be made with Contacts class');
+    }
+    this._contacts = value;
+  }
+
+  get contacts () {
+    return this._contacts;
+  }
+
   getAllInfo() {
     return `Name: ${this.name}\nSurname: ${this.surname}\nGender: ${
       this.isMale ? 'Male' : 'Female'
