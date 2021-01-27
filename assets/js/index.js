@@ -72,29 +72,29 @@ const stud1 = new Student(
 // 3.4 Вывести индексы нулевых элементов (элемент равен нулю)
 // 3.5 Подсчитать количество нулевых элементов
 
-const getRandomNumber = () => Math.round(Math.random() * 100);
+const getRandomNumber = () => Math.round(Math.random()) > 0.5 ? Math.round(Math.random() * 100) : Math.round(Math.random() * -100);
 
 const testArray = new Array(25).fill().map(() => getRandomNumber());
 
 testArray.fill(0, 24);
 
-console.log('Even index');
+console.log('Start of data with even index');
 for(const [key, value] of testArray.entries()) {
   if(key% 2 === 0) {
     console.log(value);
   }
 }
-console.log('Even index');
+console.log('End of data with even index');
 
-console.log('even numbers');
+console.log('Start of even numbers data');
 testArray.forEach((item) => {
   if (item % 2 === 0) {
     console.log(item);
   }
 });
-console.log('even numbers');
+console.log('End of even numbers data');
 
-console.log('Index 0');
+console.log('Start of data with 0 as value');
 
 let counter = 0;
 for (const [key, value] of testArray.entries()) {
@@ -103,8 +103,8 @@ for (const [key, value] of testArray.entries()) {
     counter++;
   }
 }
-console.log('Index 0');
-console.log(`zero counter = ${counter}`);
+console.log('End of data with 0 as value');
+console.log(`zero values counter = ${counter}`);
 
 // 4 Создать классы:
 // - Книга (автор, название, год издания, издательство)
