@@ -137,23 +137,29 @@ function fizzBuzzPrinter(number) {
     throw new TypeError('Input must be integer number');
   }
   if(!Number.isInteger(number)) {
+    // не уверен на счет типа ошибки 
     throw new TypeError('Number must be integer');
   }
   if (number < 1) {
     throw new RangeError('Number must be positive');
   }
-  for (let i = 0; i < number; i++) {
-    if (i % 3 === 0 && i % 5 === 0) {
-      console.log('fizzbuzz');
+
+  const stringArray = [];
+
+  for (let i = 1; i <= number; i++) {
+    if (i % 15 === 0) {
+      stringArray.push('fizzbuzz');
       continue;
     } else if (i % 3 === 0) {
-      console.log('fizz');
+      stringArray.push('fizz');
       continue;
     } else if (i % 5 === 0) {
-      console.log('buzz');
+      stringArray.push('buzz');
       continue;
-    } else {
-      console.log(i);
     }
+    stringArray.push(i);
+
   }
+
+  return stringArray.join(" ");
 }
